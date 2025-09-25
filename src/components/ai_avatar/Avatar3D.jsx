@@ -134,6 +134,10 @@ const Avatar3D = () => {
     <Canvas
       style={{ width: "100%", height: "100%" }}
       camera={{ position: [0, 0, 3.5], fov: 45 }}
+      onCreated={({ gl }) => {
+        // Disable zoom controls
+        gl.domElement.style.touchAction = 'none';
+      }}
     >
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
@@ -141,7 +145,14 @@ const Avatar3D = () => {
         <Model lipsync={lipsyncData} />
         <Environment preset="sunset" />
       </Suspense>
-      <OrbitControls />
+      <OrbitControls 
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={true}
+        autoRotate={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
     </Canvas>
   );
 };

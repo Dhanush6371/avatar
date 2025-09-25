@@ -654,8 +654,7 @@ const Index = () => {
 
       {/* LiveKit Widget */}
       {showSupport && conciergeMode && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-6 pointer-events-auto">
-          <div className="pointer-events-auto w-full max-w-md">
+        <div className="pointer-events-auto">
             {conciergeMode === "avatar" ? (
               <div style={{
                 backgroundColor: 'white',
@@ -762,7 +761,6 @@ const Index = () => {
                 voiceOnly={conciergeMode === "voice-only"}
               />
             )}
-          </div>
         </div>
       )}
     </div>

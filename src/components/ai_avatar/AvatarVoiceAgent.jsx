@@ -34,12 +34,11 @@ const AvatarVoiceAgent = ({ onClose }) => {
     <div
       style={{
         position: "fixed",
-        bottom: "2rem",
-        left: "50%",
-        transform: "translateX(-50%)",
+        bottom: "6rem",
+        right: "1.5rem",
         backgroundColor: "transparent",
-        width: "320px",
-        height: "400px",
+        width: "200px",
+        height: "250px",
         zIndex: 50,
         display: "flex",
         flexDirection: "column",
@@ -48,12 +47,12 @@ const AvatarVoiceAgent = ({ onClose }) => {
       <div style={{ flex: 1, position: 'relative', width: '100%', height: '100%' }}>
         <Avatar3D />
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1rem" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "0.5rem" }}>
         {/* Left: Mic toggle button */}
         <button
           onClick={toggleListening}
           style={{
-            padding: "0.75rem",
+            padding: "0.5rem",
             borderRadius: "50%",
             backgroundColor: "rgba(255, 255, 255, 0.9)",
             backdropFilter: "blur(10px)",
@@ -68,14 +67,14 @@ const AvatarVoiceAgent = ({ onClose }) => {
           }}
           aria-label={isListening ? "Stop listening" : "Start listening"}
         >
-          {isListening ? <Mic size={24} /> : <MicOff size={24} />}
+          {isListening ? <Mic size={16} /> : <MicOff size={16} />}
         </button>
 
         {/* Right: Close (X) button */}
         <button
           onClick={handleClose}
           style={{
-            padding: "0.75rem",
+            padding: "0.5rem",
             borderRadius: "50%",
             backgroundColor: "rgba(255, 255, 255, 0.9)",
             backdropFilter: "blur(10px)",
@@ -90,7 +89,7 @@ const AvatarVoiceAgent = ({ onClose }) => {
           }}
           aria-label="Close"
         >
-          <X size={24} />
+          <X size={16} />
         </button>
       </div>
     </div>
