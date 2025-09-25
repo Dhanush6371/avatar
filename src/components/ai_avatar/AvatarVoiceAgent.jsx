@@ -37,19 +37,15 @@ const AvatarVoiceAgent = ({ onClose }) => {
         bottom: "2rem",
         left: "50%",
         transform: "translateX(-50%)",
-        backgroundColor: "#FFFFFF",
-        border: "1px solid #f0f0f0",
-        boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-        borderRadius: "32px",
+        backgroundColor: "transparent",
         width: "320px",
         height: "400px",
         zIndex: 50,
         display: "flex",
         flexDirection: "column",
-        padding: "1rem",
       }}
     >
-      <div style={{ flex: 1, position: 'relative' }}>
+      <div style={{ flex: 1, position: 'relative', width: '100%', height: '100%' }}>
         <Avatar3D />
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1rem" }}>
@@ -57,15 +53,18 @@ const AvatarVoiceAgent = ({ onClose }) => {
         <button
           onClick={toggleListening}
           style={{
-            padding: "0.5rem",
+            padding: "0.75rem",
             borderRadius: "50%",
-            backgroundColor: "transparent",
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            backdropFilter: "blur(10px)",
             color: isListening ? "#D4AF37" : "#6b7280",
-            border: "none",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            transition: "all 0.3s ease",
           }}
           aria-label={isListening ? "Stop listening" : "Start listening"}
         >
@@ -76,15 +75,18 @@ const AvatarVoiceAgent = ({ onClose }) => {
         <button
           onClick={handleClose}
           style={{
-            padding: "0.5rem",
+            padding: "0.75rem",
             borderRadius: "50%",
-            backgroundColor: "transparent",
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            backdropFilter: "blur(10px)",
             color: "#6b7280",
-            border: "none",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            transition: "all 0.3s ease",
           }}
           aria-label="Close"
         >
